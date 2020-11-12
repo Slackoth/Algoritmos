@@ -9,8 +9,6 @@ bool llFunction(int** arr, int mSize) {
     int g = randomNumber(1, 4);
     TwoInt h = randomNumbers(1, mSize);
     
-    cout << "Opcion -> " << g << " -> (Fila, Columna) -> (" << h.n << ", " << h.m << ")" << endl;
-    
     switch (g) {
         case 1:
             return insertThreeLeft(arr, Position(h.n, h.m), mSize);

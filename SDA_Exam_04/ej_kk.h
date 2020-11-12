@@ -14,9 +14,6 @@ bool kkFunction(int** arr, int mSize) {
     int g = randomNumber(1, 4);
     TwoInt h = randomNumbers(1, mSize);
     
-    //Extra para que se facilite saber si se ha ejecutadao de forma exitosa
-    cout << "Opcion -> " << g << " -> (Fila, Columna) -> (" << h.n << ", " << h.m << ")" << endl;
-    
     switch (g) {
         case 1:
             return insertTwoLeft(arr, Position(h.n, h.m), mSize);
