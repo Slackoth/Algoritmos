@@ -128,7 +128,7 @@ void pushBack(Node** db, order data) {
             aux = aux->next;
         
         aux->next = newNode;
-        newNode->prev =  aux;
+        newNode->prev = aux;
     }
 }
 

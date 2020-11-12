@@ -13,6 +13,7 @@ struct NodeData {
     bool operator==(const NodeData& rhs) {
         return this->n == rhs.n && this->c == rhs.c; 
     }
+
     bool operator<=(const NodeData& rhs) {
         return this->n <= rhs.n;
     }
@@ -34,16 +35,21 @@ void pushBack(Node**,Data);
 int main(void) {
     Node* list = NULL;
     srand(time(NULL));
-    for (int i = 0; i < 10; i++)
-    {
+    
+    for (int i = 0; i < 10; i++) 
         pushBack(&list,Data(rand() % 16,'a'));
-    }
-    cout << "No" << endl;
-    traverseList(list);
-    cout << "Yes" << endl;
-    list = mergeSort(list);
+    
+    cout << "Disordered: " << endl;
+    
     traverseList(list);
     
+    cout << "Ordered: " << endl;
+    
+    list = mergeSort(list);
+    
+    traverseList(list);
+
+    return 0;
 }
 
 int size(Node* list) {
@@ -52,12 +58,14 @@ int size(Node* list) {
     else
         return 0;
 }
+
 void traverseList(Node* list) {
     if(list) {
-        cout << "N: " << list->info.n << " C: " <<  list->info.c <<  endl;
+        cout << "N: " << list->info.n << " C: " <<  list->info.c << endl;
         traverseList(list->next);
     }
 }
+
 void pushBack(Node** list,Data data) {
     Node* newNode = new Node;
     newNode->info = data;
@@ -74,6 +82,7 @@ void pushBack(Node** list,Data data) {
         aux->next = newNode;
     }   
 }
+
 Node* mergeSort(Node* list) {
     if(!list || !list->next)
         return list;
@@ -97,6 +106,7 @@ Node* mergeSort(Node* list) {
 
     return merge(left,right);
 }
+
 Node* merge(Node* left, Node* right) {
     Node* mergedList = NULL;
     

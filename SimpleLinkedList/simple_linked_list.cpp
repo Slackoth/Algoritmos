@@ -24,9 +24,11 @@ struct Node {
 
 typedef struct Node* SimpleNode;
 
+#pragma region prototypes
+
 int size(SimpleNode);
 bool empty(SimpleNode);
-void travelList(SimpleNode);
+void traverseList(SimpleNode);
 int remove(SimpleNode*,Data);
 void pushBack(SimpleNode*,Data);
 void pushFront(SimpleNode*,Data);
@@ -36,6 +38,8 @@ bool removeFirstEncounter(SimpleNode*,Data);
 
 template <class Predicative>
 int removeIf(SimpleNode*,Predicative);
+
+#pragma endregion
 
 int main(void) {
     SimpleNode newList = NULL;
@@ -57,24 +61,25 @@ int main(void) {
     removeIf(&newList,[](Data data)-> bool {
         return data.n % 2 == 0;
     });
-    travelList(newList);
-    
-    
+    traverseList(newList);
 }
+
+#pragma region functions
 
 int size(SimpleNode list) {
     if(list) 
         return 1 + size(list->next);
     else
         return 0;
-
 }
+
 bool empty(SimpleNode list) {
     if(!list)
         return true;
     else 
         return false;
 }
+
 void pushBack(SimpleNode* list,Data data) {
     SimpleNode newNode = new Node;
     newNode->info = data;
@@ -91,18 +96,21 @@ void pushBack(SimpleNode* list,Data data) {
         aux->next = newNode;
     }   
 }
+
 void pushFront(SimpleNode* list, Data data) {
     SimpleNode newNode = new Node;
     newNode->info = data;
     newNode->next = *list;
     *list = newNode;
 }
-void travelList(SimpleNode list) {
+
+void traverseList(SimpleNode list) {
     if(list) {
         cout << "N: " << list->info.n << " C: " <<  list->info.c <<  endl;
-        travelList(list->next);
+        traverseList(list->next);
     }
 }
+
 int remove(SimpleNode* list, Data data) {
     if(!*list)
         return 0;
@@ -116,6 +124,7 @@ int remove(SimpleNode* list, Data data) {
     else 
         return 0 + remove(&(*list)->next,data);
 }
+
 void pushAt(SimpleNode* list,Data data,int pos) {
     SimpleNode newNode = new Node;
     newNode->info = data;
@@ -136,6 +145,7 @@ void pushAt(SimpleNode* list,Data data,int pos) {
         aux->next = newNode;
     }
 }
+
 bool removeFirstEncounter(SimpleNode* list, Data data) {
     if(!*list)
         return false;
@@ -150,6 +160,7 @@ bool removeFirstEncounter(SimpleNode* list, Data data) {
         return false + removeFirstEncounter(&(*list)->next,data);
     }
 }
+
 bool removeAt(SimpleNode* list,int current,int pos) {
     if(!*list)
         return false;
@@ -163,6 +174,7 @@ bool removeAt(SimpleNode* list,int current,int pos) {
     else
         return false + removeAt(&(*list)->next,current+1,pos);
 }
+
 template <class Predicative>
 int removeIf(SimpleNode* list,Predicative condition) {
     if(!*list)
@@ -177,3 +189,5 @@ int removeIf(SimpleNode* list,Predicative condition) {
     else 
         return 0 + removeIf(&(*list)->next,condition);
 }
+
+#pragma endregion

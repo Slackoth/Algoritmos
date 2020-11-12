@@ -34,9 +34,8 @@ int main(void) {
     float** albums = new float*[n];
     srand(time(NULL));
     
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
         albums[i] = new float[n];
-    }
 
     for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++)

@@ -4,6 +4,9 @@
         "iostream": "cpp",
         "cmath": "cpp",
         "new": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     }
 }
