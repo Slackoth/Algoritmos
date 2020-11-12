@@ -14,5 +14,5 @@ void ppFunction(int* p, int* c, int** m, char** n, int mSize) {
         *c += 1;
     }
     else
-        *c -= 100;
+        *p -= 100;
 }

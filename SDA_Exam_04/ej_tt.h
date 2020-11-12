@@ -121,4 +121,58 @@ int remove(Node** dl, NodeData nd) {
         return 0;
 }
 
+bool removeAt(Node** dl, int pos, int current) {
+    if(*dl) {
+        if(current == pos) {
+            if(!(*dl)->prev) {
+                *dl = (*dl)->next;
+                (*dl)->prev = NULL;
+            }
+            else {
+                Node* auxPrev = (*dl)->prev;
+                *dl = (*dl)->next;
+
+                if(*dl) {
+                    (*dl)->prev = auxPrev;
+                }
+
+                auxPrev->next = *dl;
+            }
+
+            return true;
+        }
+        else
+            return false + removeAt(&(*dl)->next, pos, current + 1);
+    }
+    else
+        return false;
+}
+
+template <class Predicative>
+int removeIf(Predicative removeCondition, Node** dl) {
+    if(*dl) {
+        if(removeCondition((*dl)->nd)) {
+            if(!(*dl)->prev) {
+                *dl = (*dl)->next;
+                (*dl)->prev = NULL;
+            }
+            else {
+                Node* prev = (*dl)->prev;
+                *dl = (*dl)->next;
+                
+                if(*dl)
+                    (*dl)->prev = prev;
+
+                prev->next = *dl;
+            }
+
+            return 1 + removeIf(removeCondition, dl);
+        }
+        else
+            return 0 + removeIf(removeCondition, &(*dl)->next);
+    }
+    else
+        return 0;
+}
+
 #endif
