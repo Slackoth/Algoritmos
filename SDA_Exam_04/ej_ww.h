@@ -3,23 +3,6 @@
 
 using namespace std;
 
-// void cutList(Node** dl, int sizeLimit);
-
-// int main() {
-//     Node* dl = NULL;
-
-//     for(int i = 0; i < 15; i++) 
-//         pushBack(&dl, NodeData(i, "sa"));
-
-//     traverseFront(dl);
-
-//     cutList(&dl, 10);
-
-//     traverseFront(dl);
-    
-//     return 0;
-// }
-
 void cutList(Node** dl, int sizeLimit) {
     if(!*dl)
         return;

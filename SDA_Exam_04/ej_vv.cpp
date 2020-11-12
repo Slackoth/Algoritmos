@@ -4,33 +4,6 @@
 using namespace std;
 
 template<class T>
-void swap(T* a, T* b);
-
-void quickSort(Node* head);
-Node* lastNode(Node* head);
-void _quickSort(Node* low, Node* high);
-Node* partition(Node* low, Node* high);
-
-int main() {
-    Node* dl = NULL;
-    srand(time(NULL));
-
-    //for(int i = 0; i < 10; i++) 
-    pushBack(&dl, NodeData(rand() & 100 + 1, "as"));
-    pushBack(&dl, NodeData(rand() & 100 + 1, "Ae"));
-    pushBack(&dl, NodeData(rand() & 100 + 1, "sc"));
-    pushBack(&dl, NodeData(rand() & 100 + 1, "br"));
-    pushBack(&dl, NodeData(rand() & 100 + 1, "xl"));
-    
-    traverseFront(dl);
-
-    quickSort(dl);
-
-    traverseFront(dl);
-    return 0;
-}
-
-template<class T>
 void swap(T* a, T* b) {
     T aux = *a;
     *a = *b;

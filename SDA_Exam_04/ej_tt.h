@@ -24,32 +24,6 @@ struct Node {
     Node(NodeData _nd): nd(_nd) { next = prev = NULL; }
 };
 
-// int size(Node* dl);
-// bool empty(Node* dl);
-// void traverseBack(Node* dl);
-// void traverseFront(Node* dl);
-// int remove(Node** dl, NodeData nd);
-// void pushBack(Node** dl, NodeData nd);
-// void pushFront(Node** dl, NodeData nd);
-// void pushAt(Node** dl, NodeData nd, int pos);
-
-// int main(void) {
-//     Node* dl = NULL;
-
-//     pushFront(&dl, NodeData(3, "as"));
-//     pushFront(&dl, NodeData(2, "bs"));
-//     pushFront(&dl, NodeData(1, "cs"));
-
-//     pushBack(&dl, NodeData(4, "ds"));
-//     pushBack(&dl, NodeData(5, "es"));
-//     pushBack(&dl, NodeData(6, "fs"));
-
-//     remove(&dl, NodeData(4, "ds"));
-
-//     traverseFront(dl);
-//     traverseBack(dl);
-// }
-
 int size(Node* dl) {
     if(dl)
         return 1 + size(dl->next);

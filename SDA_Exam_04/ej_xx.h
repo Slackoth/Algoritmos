@@ -4,16 +4,6 @@
 
 using namespace std;
 
-// Node* readData(string filename);
-// void writeCsv(Node* dl, string filename);
-
-// int main() {
-//     Node* dl = readData("data.csv");
-//     //traverseFront(dl);
-//     writeCsv(dl, "data.csv");
-//     return 0;
-// }
-
 Node* readCsv(string filename) {
     fstream file(filename);
     Node* dl = NULL;

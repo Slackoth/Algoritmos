@@ -2,13 +2,6 @@
 
 using namespace std;
 
-int userNumber();
-
-int main() {
-    cout << userNumber() << "\n";
-    return 0;
-}
-
 int userNumber() {
     int n;
 

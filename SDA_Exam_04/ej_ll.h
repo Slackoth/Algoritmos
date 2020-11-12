@@ -5,31 +5,6 @@
 
 using namespace std;
 
-// bool llFunction(int** arr, int mSize);
-
-// int main() {
-//     int mSize = MATRIX_SIZE_H;
-//     int** arr = new int*[mSize];
-
-//     for(int i = 0; i < mSize; i++)
-//         arr[i] = new int[mSize];
-
-//     for(int i = 0; i < mSize; i++)
-//         for(int j = 0; j < mSize; j++)
-//             arr[i][j] = 0;
-
-//     cout << (llFunction(arr, mSize) ? "Insertado con exito." 
-//         : "No se ha podido insertar.") << "\n";
-
-//     for(int i = 0; i < mSize; i++) {
-//         for(int j = 0; j < mSize; j++)
-//             cout << arr[i][j] << "\t";
-//         cout << "\n";
-//     }
-
-//     return 0;
-// }
-
 bool llFunction(int** arr, int mSize) {
     int g = randomNumber(1, 4);
     TwoInt h = randomNumbers(1, mSize);

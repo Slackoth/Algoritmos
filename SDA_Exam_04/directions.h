@@ -5,6 +5,8 @@
 
 using namespace std;
 
+enum Direction { LEFT, RIGHT, UP, DOWN };
+
 #pragma region directions
 
 bool checkUp(int nCells, int trueRow) {
@@ -33,6 +35,30 @@ bool checkRight(int nCells, int trueCol, int mSize) {
         return false;
     else
         return true;
+}
+
+bool checkDirection(int nCells, int trueRow, int trueCol, Direction dir, int mSize) {
+    switch (dir) {
+        case LEFT:
+            return checkLeft(nCells, trueCol);
+            break;
+        
+        case RIGHT:
+            return checkRight(nCells, trueCol, mSize);
+            break;
+
+        case UP:
+            return checkUp(nCells, trueRow);
+            break;
+
+        case DOWN:
+            return checkDown(nCells, trueRow, mSize);
+            break;    
+        
+        default:
+            return false;
+            break;
+    }
 }
 
 #pragma endregion

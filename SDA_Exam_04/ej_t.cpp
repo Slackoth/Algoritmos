@@ -1,41 +1,15 @@
 #include <iostream>
+#include "position.h"
 
 using namespace std;
 
-const int ROW_SIZE = 5;
-const int COL_SIZE = 5;
-
-struct Position {
-    int row, col;
-
-    Position() {}
-    Position(int _r, int _c): row(_r), col(_c) {}
-};
-
-bool checkUpCell(int** arr, Position pos);
-
-int main() {
-    int** arr = new int*[ROW_SIZE];
-
-    for(int i = 0; i < ROW_SIZE; i++)
-        arr[i] = new int[COL_SIZE];
-
-    for(int i = 0; i < ROW_SIZE; i++)
-        for(int j = 0; j < COL_SIZE; j++)
-            arr[i][j] = 1;
-
-    cout << (checkUpCell(arr, Position(1, 4)) ? "Es accesesible." : "No es accesesible.") << "\n";
-
-    return 0;
-}
-
-bool checkUpCell(int** arr, Position pos) {
+bool checkUpCell(int** arr, Position pos, int mSize) {
     int trueRow = pos.row - 1;
     int trueCol = pos.col - 1;
     
     if(trueRow < 0 || trueCol < 0)
         return false;
-    else if(trueRow >= ROW_SIZE || trueCol >= COL_SIZE)
+    else if(trueRow >= mSize || trueCol >= mSize)
         return false;
     else if(trueRow - 1 < 0)
         return false;

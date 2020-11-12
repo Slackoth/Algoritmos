@@ -5,30 +5,6 @@
 
 using namespace std;
 
-// bool mmFunction(int** arr);
-
-// int main() {
-//     int** arr = new int*[ROW_SIZE];
-
-//     for(int i = 0; i < ROW_SIZE; i++)
-//         arr[i] = new int[COL_SIZE];
-
-//     for(int i = 0; i < ROW_SIZE; i++)
-//         for(int j = 0; j < COL_SIZE; j++)
-//             arr[i][j] = 0;
-
-//     cout << (mmFunction(arr) ? "Insertado con exito." 
-//         : "No se ha podido insertar.") << "\n";
-
-//     for(int i = 0; i < ROW_SIZE; i++) {
-//         for(int j = 0; j < COL_SIZE; j++)
-//             cout << arr[i][j] << "\t";
-//         cout << "\n";
-//     }
-
-//     return 0;
-// }
-
 bool mmFunction(int** arr, int mSize) {
     int g = randomNumber(1, 4);
     TwoInt h = randomNumbers(1, mSize);

@@ -5,17 +5,7 @@
 
 using namespace std;
 
-// struct TwoInt {
-//     int n;
-//     int m;
-
-//     TwoInt() {}
-//     TwoInt(int _n, int _m): n(_n), m(_m) {}
-// };
-
 TwoInt randomNumbers(int a, int b) {
-    //srand(time(NULL));
-    
     int n = a + rand() % (b - a + 1);
     int m = a + rand() % (b - a + 1);;
 

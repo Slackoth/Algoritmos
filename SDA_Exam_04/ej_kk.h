@@ -8,31 +8,6 @@
 
 using namespace std;
 
-// bool kkFunction(int** arr, int mSize);
-
-// int main() {
-//     int mSize = MATRIX_SIZE_H;
-//     int** arr = new int*[mSize];
-
-//     for(int i = 0; i < mSize; i++)
-//         arr[i] = new int[mSize];
-
-//     for(int i = 0; i < mSize; i++)
-//         for(int j = 0; j < mSize; j++)
-//             arr[i][j] = 0;
-
-//     cout << (kkFunction(arr, mSize) ? "Insertado con exito." 
-//         : "No se ha podido insertar.") << "\n";
-
-//     for(int i = 0; i < mSize; i++) {
-//         for(int j = 0; j < mSize; j++)
-//             cout << arr[i][j] << "\t";
-//         cout << "\n";
-//     }
-
-//     return 0;
-// }
-
 void ptm() {}
 
 bool kkFunction(int** arr, int mSize) {

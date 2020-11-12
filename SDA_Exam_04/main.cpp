@@ -1,4 +1,4 @@
-#include "size.h"
+//#include "size.h"
 #include "ej_a.h"
 #include "ej_b.h"
 #include "ej_j.h"
@@ -42,15 +42,18 @@ int main() {
     cout << "Intento de insercion debido a ll -> " << (llFunction(m2, mSize) ? "Exitosa." : "Fallida.")  << "\n";
     cout << "Intento de insercion debido a mm -> " << (mmFunction(m2, mSize) ? "Exitosa." : "Fallida.")  << "\n";    
     
+    //Check if it is in 13
     rrFunction(&p, &c, m2, m1, mSize);
     printMatrix(m1, mSize);
     
     Node* dl = readCsv("data.csv");
 
-    pushBack(&dl, NodeData(p, name));
+    pushFront(&dl, NodeData(p, name));
     quickSort(dl);
     cutList(&dl, 10);
-    traverseFront(dl);
+
+    cout << "Lista cortada: " << endl; traverseFront(dl);
+    
     writeCsv(dl, "finished.csv");
 
     return 0;
