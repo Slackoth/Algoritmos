@@ -14,6 +14,7 @@
 #include <iostream>
 #include "two_int.h"
 #include "position.h"
+#include "directions.h"
 
 /*
 ¿De qué se trata la aplicación? 

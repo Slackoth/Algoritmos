@@ -37,7 +37,6 @@ int main(void) {
 
 int size(SimpleNode stack) {
     return stack ? 1 + size(stack->next) : 0;
-
 }
 bool empty(SimpleNode stack) {
     return stack == NULL;

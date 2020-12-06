@@ -70,6 +70,7 @@ void push(Queue* q, Data data) {
         q->back = newNode;
     }
 }
+
 void pop(Queue* q) {
     SimpleNode aux = q->front;
     q->front = q->front->next;
@@ -86,6 +87,7 @@ void swap(Queue* q, Queue* qu) {
     qu->front = frontAux;
     qu->back = backAux;
 }
+
 void travelStack(SimpleNode front) {
     if(front) {
         cout << front->info.n << endl;
